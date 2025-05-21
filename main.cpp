@@ -86,7 +86,7 @@ vector<Question> historyQuestions={
     {"India's independence leader?", {"Nehru", "Gandhi", "Indira Gandhi", "Bose"}, 2},
     {"North vs South US war?", {"WWI", "Revolution", "Civil War", "Vietnam"}, 3}
 };
-
+//Geography questions
 vector<Question> geographyQuestions={
     {"What is the longest river in the world?", {"Amazon", "Yangtze", "Nile", "Mississippi"}, 3},
     {"Which country has the largest population?", {"India", "China", "United States", "Indonesia"}, 2},
@@ -235,11 +235,11 @@ int main() {
             vector<Question>q=getCategoryQuestions(cat);
             totalQuestions.insert(totalQuestions.end(), q.begin(), q.end());
         }
-
+		//shuffle
         random_device rd;
         mt19937 g(rd());
         shuffle(totalQuestions.begin(), totalQuestions.end(), g);
-
+		//ask questions till player wins by scorepoints or 20 questions go by
         while(qCount1<10&&qCount2<10&&score1<100&&score2<100) {
             cout<<"\n----- "<<(turn%2==0?name1:name2)<< "'s Turn -----\n";
 
